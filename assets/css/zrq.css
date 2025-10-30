@@ -1,0 +1,40 @@
+.zrq-img {
+  width: 100%;
+}
+
+.zrq-pad-15 {
+  padding: 15px;
+}
+
+.zrq-ul {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.zrq-ul li {
+  list-style: disc !important;
+  display: list-item !important;
+  margin-left: 30px !important
+}
+
+.zrq-center {
+  text-align: center;
+}
+
+.zrq-m2 {
+  margin: 2rem;
+}
+
+.zrq-w50 {
+  width: 50%;
+}
+
+.zrq-grey p {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: 500;
+}
