@@ -1,0 +1,152 @@
+<!doctype html>
+<!-- 
+   Hi, you're looking at a web page built with love by:
+
+   Ricardo
+
+  /$$$$$$            /$$             /$$                        
+ /$$__  $$          |__/            | $$                        
+| $$  \ $$ /$$   /$$ /$$ /$$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$$
+| $$  | $$| $$  | $$| $$| $$__  $$|_  $$_/   |____  $$ /$$_____/
+| $$  | $$| $$  | $$| $$| $$  \ $$  | $$      /$$$$$$$|  $$$$$$ 
+| $$/$$ $$| $$  | $$| $$| $$  | $$  | $$ /$$ /$$__  $$ \____  $$
+|  $$$$$$/|  $$$$$$/| $$| $$  | $$  |  $$$$/|  $$$$$$$ /$$$$$$$/
+ \____ $$$ \______/ |__/|__/  |__/   \___/   \_______/|_______/ 
+      \__/                                                                      
+
+   http://www.ricardoquintas.com
+   
+   October/2025
+-->
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Em construção</title>
+  <meta name="description" content="Site em construção. Volta em breve.">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font for a clean look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Troca esta URL pela tua imagem */
+      --bg-url: url('assets/images/sapateado.jpg');
+      --overlay: 0.55; /* intensidade do escurecimento */
+      --grain: 0.04; /* intensidade do grão */
+      --blur: 0px;  /* 0–3px se quiseres desfocar o fundo */
+      --accent: #7c3aed; /* roxo moderno */
+    }
+
+    html, body { height: 100%; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      color: #fff;
+      overflow: clip;
+      background: radial-gradient(1200px 1200px at 20% 10%, rgba(124,58,237,.25), transparent 60%),
+                  radial-gradient(900px 900px at 80% 30%, rgba(16,185,129,.18), transparent 60%),
+                  radial-gradient(700px 700px at 50% 90%, rgba(59,130,246,.16), transparent 60%);
+      isolation: isolate;
+    }
+
+    /* Background image + gradient overlay */
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0; z-index: -2;
+      background-image: var(--bg-url);
+      background-size: cover; background-position: center;
+      filter: blur(var(--blur));
+      transform: scale(1.03);
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(to bottom right, rgba(2,6,23,1), rgba(2,6,23, var(--overlay)) 50%, rgba(2,6,23,1));
+    }
+
+    /* Subtle animated gradient sheen */
+    .sheen {
+      position: absolute; inset: -40%; z-index: -1; pointer-events: none;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.06), transparent 60%);
+      animation: float 12s linear infinite;
+    }
+    @keyframes float { from { transform: translateX(-10%) translateY(-5%); } to { transform: translateX(10%) translateY(5%); } }
+    @media (prefers-reduced-motion: reduce) { .sheen { animation: none; } }
+
+    /* Glass card */
+    .glass {
+      background: rgba(255,255,255, .06);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 8px 32px rgba(2, 6, 23, .5);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 3rem; height: 3rem;
+      display: grid; place-items: center;
+      background: conic-gradient(from 0deg, var(--accent), #10b981, #3b82f6, var(--accent));
+      border-radius: 1rem;
+      box-shadow: 0 6px 24px rgba(124,58,237,.45);
+    }
+
+    .btn-accent {
+      --bs-btn-bg: var(--accent);
+      --bs-btn-border-color: var(--accent);
+      --bs-btn-hover-bg: #6d28d9;
+      --bs-btn-hover-border-color: #6d28d9;
+      --bs-btn-focus-shadow-rgb: 124,58,237;
+    }
+
+    /* Footer links */
+    .footer a { color: rgba(255,255,255,.8); text-decoration: none; }
+    .footer a:hover { color: #fff; }
+
+    /* Optional noise layer for texture */
+    .noise { position:absolute; inset:0; z-index: -1; opacity: var(--grain); background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity=".65"/></svg>'); background-size: 160px 160px; mix-blend-mode: overlay; }
+  </style>
+</head>
+
+<body>
+  <header class="hero d-flex align-items-center justify-content-center text-center">
+    <div class="sheen"></div>
+    <div class="noise"></div>
+
+    <div class="container px-4">
+      <div class="mx-auto" style="max-width: 720px;">
+        <div class="d-inline-flex align-items-center gap-3 mb-4">
+          <div class="brand-mark"><i class="bi bi-lightning-charge text-white"></i></div>
+          <span class="fw-semibold text-uppercase letter-spacing-1" style="opacity:.9">Bem vindo ao futuro site da Paula Cirino</span>          
+        </div>
+
+        <h1 class="display-4 fw-bold">Site em construção</h1>
+        <p class="lead mb-4" style="opacity:.9">Estamos a preparar algo muito bonito.</p>
+
+
+
+        <div class="d-flex justify-content-center gap-3 fs-4">
+          <a href="https://www.instagram.com/rhythmtapmovement/" target="_blank" aria-label="Instagram" class="text-white-50"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@paulacirino8021/videos" target="_blank" aria-label="LinkedIn" class="text-white-50"><i class="bi bi-youtube"></i></a>
+          <a href="mailto:paulacirinoferreira@gmail.com" aria-label="Email" class="text-white-50"><i class="bi bi-envelope"></i></a>
+        </div>
+
+        <div class="mt-5 small text-white-50">© <span id="year"></span> paulacirino.com</div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    // Atualiza o ano do rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
